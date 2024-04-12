@@ -45,6 +45,7 @@ public class VacanteModel implements CRUD{
         return listVacantes;
     }
 
+
     @Override
     public boolean update(Object obj) {
         Connection objConnection = ConfigDB.openConnection();

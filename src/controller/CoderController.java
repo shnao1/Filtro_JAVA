@@ -2,13 +2,13 @@ package controller;
 
 import entity.Coder;
 import model.CoderModel;
+import model.EmpresaModel;
 import utils.Utils;
 
 import javax.swing.*;
 
 import java.util.List;
 
-import static controller.EmpresaController.instaceModel;
 
 public class CoderController {
     public static void insert(){
@@ -66,6 +66,8 @@ public class CoderController {
         instaceModel().delete(objSlected);
     }
 
+    public static CoderModel instaceModel() { return new CoderModel();}
+
     public static void update(){
         try {
             CoderModel objCoderModel = new CoderModel();
@@ -103,5 +105,7 @@ public class CoderController {
         }catch (NumberFormatException e){
             JOptionPane.showMessageDialog(null, "El id del coder debe ser numerico", "Error", JOptionPane.ERROR_MESSAGE);
         }
+
     }
+
 }

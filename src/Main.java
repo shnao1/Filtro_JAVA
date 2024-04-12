@@ -1,4 +1,5 @@
 import controller.CoderController;
+import controller.ContratacionController;
 import controller.EmpresaController;
 import controller.VacanteController;
 import database.ConfigDB;
@@ -9,7 +10,7 @@ import javax.swing.*;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        int option = 0, option2 = 0, option3 = 0, option4 = 0;
+        int option = 0, option2 = 0, option3 = 0, option4 = 0, option5 = 0;
 
         do {
             option = Integer.parseInt(JOptionPane.showInputDialog("""
@@ -77,6 +78,33 @@ public class Main {
                                 break;
                         }
                     }while (option3 != 5);
+                    break;
+                case 3:
+                    do {
+                        option5 = Integer.parseInt(JOptionPane.showInputDialog("""
+                                1. Listar Contratos
+                                2. Crear Contrato
+                                3. Eliminar Contrato
+                                4. Actualizar Contrato
+                                5. Salir
+                                
+                                Ingrese una opcion:
+                                """));
+                        switch (option5){
+                            case 1:
+                                ContratacionController.getAll();
+                                break;
+                            case 2:
+                                ContratacionController.insert();
+                                break;
+                            case 3:
+                                ContratacionController.delete();
+                                break;
+                            case 4:
+                                ContratacionController.update();
+                                break;
+                        }
+                    }while (option5 != 5);
                     break;
                 case 4:
                     do {
